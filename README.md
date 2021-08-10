@@ -4,7 +4,7 @@
 
 ### Current Projects
 
-Currently studying [CSL Course](www.crackinglessons.com).
+Currently studying [CSL Course](https://www.crackinglessons.com).
 
 ### Contact
 
