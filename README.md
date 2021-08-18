@@ -1,15 +1,24 @@
-## Profile
 
+### Hi there 👋
+
+Thanks for checking out my blog!
+
+- 🔭 I’m currently working on Reverse Engineering
+- 🌱 I’m currently learning Software Debugging, Network Security & Malware Analysis
+- 📫 How to reach me: discord @ 1504681#9259
+
+[Crackmes Profile](https://crackmes.one/user/KellytRE)
 [Github Profile](https://github.com/1504681)
+
 
 ## Current Projects
 
-Currently studying [CSL Course](https://www.crackinglessons.com).
+Currently studying reversing @ [CSL Course](https://www.crackinglessons.com).
 
-Currently studying @ [TryHackMe](https://tryhackme.com/p/KellytRE).
+Also doing a bit of security training @ [TryHackMe](https://tryhackme.com/p/KellytRE).
 
 
-## Projects
+## Completed Projects
 
 #### Sublime Text 3
 
