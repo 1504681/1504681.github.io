@@ -18,12 +18,13 @@ Currently studying reversing @ [CSL Course](https://www.crackinglessons.com).
 
 Also doing a bit of security training @ [TryHackMe](https://tryhackme.com/p/KellytRE).
 
-
-## Completed Projects
-
 #### Sublime Text 3
 
 In [this](https://github.com/1504681/reverse_sublimetext) blog, I use IDA Pro to analyze Sublime Text and its functions, removing the nag-function that prompts you to purchase the product at random intervals.
+
+## Completed Projects
+
+[wip]
 
 ## Contact
 
