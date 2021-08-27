@@ -23,7 +23,7 @@ Currently studying malware analysis @ [udemy](https://www.udemy.com/course/malwa
   
 ## Malware Analysis
 
-Currently working through the "Reverse Engineering and Malware Analysis Fundamentals" course @ [this link](https://www.udemy.com/course/malware-analysis-fundamentals/), and my lab notes can be found [here](/lab-notes/)
+Currently working through the "Reverse Engineering and Malware Analysis Fundamentals" course @ [this link](https://www.udemy.com/course/malware-analysis-fundamentals/), and my lab notes can be found [here](lab-notes)
 
 
 ## Contact
