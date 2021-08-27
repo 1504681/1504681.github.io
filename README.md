@@ -14,9 +14,7 @@ Thanks for checking out my blog!
 
 ## Current Projects
 
-Currently studying reversing @ [CSL Course](https://crackinglessons.com/learn/).
-
-Also doing a bit of security training @ [TryHackMe](https://tryhackme.com/p/KellytRE).
+Currently studying malware analysis @ [udemy](https://www.udemy.com/course/malware-analysis-fundamentals/)
 
 ## Completed Projects
 
