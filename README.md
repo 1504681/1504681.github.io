@@ -18,10 +18,6 @@ Currently studying reversing @ [CSL Course](https://crackinglessons.com/learn/).
 
 Also doing a bit of security training @ [TryHackMe](https://tryhackme.com/p/KellytRE).
 
-#### Sublime Text 3
-
-In [this](https://github.com/1504681/reverse_sublimetext) blog, I use IDA Pro to analyze Sublime Text and its functions, removing the nag-function that prompts you to purchase the product at random intervals.
-
 ## Completed Projects
 
 [Completed](https://udemy-certificate.s3.amazonaws.com/image/UC-199e8749-40a0-4de3-b724-969523e9bff1.jpg?v=1627804605000) Paul Chin's Reverse Engineering: IDA For Beginners Course @ [this link](https://www.udemy.com/course/reverse-engineering-ida/)
