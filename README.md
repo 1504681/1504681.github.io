@@ -28,4 +28,4 @@ Currently working through the "Reverse Engineering and Malware Analysis Fundamen
 
 ## Contact
 
-Message me on [discord](https://discord.com/users/623288393626812436)
+I can be reached at endotkp@gmail.com
