@@ -102,6 +102,28 @@ In the imports section, we find plenty of Registry imports for this malware to c
 Also in the imports we find CreateToolhelp32Snapshot, Process32First & Process32Next. Malware can use these APIs to enumerate through the process list looking for tools such as wireshark, x64dbg, procmon etc, to help prevent analysis.
 
 
+## HashMyFiles
+
+Next we are going to use HashMyFiles to generate a hash to copy the MD5 and check virustotal.
+![image](https://user-images.githubusercontent.com/84855585/131649532-c082d722-4c09-4c4c-bff6-022e98cc7278.png)
+
+Hashes are a way to ID the file. Some files can be much to big to upload to virustotal, and for those files we can generate a hash, and just search the hash.
+
+Search the md5 on virustotal
+![image](https://user-images.githubusercontent.com/84855585/131649656-5bf87f5d-32de-4a12-8978-c5d2da27b7f8.png)
+![image](https://user-images.githubusercontent.com/84855585/131649672-cb7c02a2-d815-4d4a-81ec-c549b257f87e.png)
+
+As we can see here, the file is clearly malicious.
+
+
+
+
+
+# Dynamic Analysis Workflow
+
+
+
+
 
 
 
