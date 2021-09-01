@@ -190,6 +190,17 @@ PEStudio shows us in the blacklisted strings, that we can see RegDeleteValue, Re
 
 ![image](https://user-images.githubusercontent.com/84855585/131647971-9beb7ba2-a5b7-459e-b707-cef60009025d.png)
 
+Also we can notice there are plenty of networking strings like "connect, socket, gethostbyname" APIs that connect to the network.
+![image](https://user-images.githubusercontent.com/84855585/131648312-715ae5b6-7dcc-4117-af1d-f2ab6c624c18.png)
+
+### Imports
+
+In the imports section, we find plenty of Registry imports for this malware to create & delete registry values.
+
+![image](https://user-images.githubusercontent.com/84855585/131648692-03b54208-a0e2-45a7-b4e4-e7d2408e4415.png)
+
+Also in the imports we find 
+
 
 
 
