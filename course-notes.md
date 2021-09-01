@@ -1,103 +1,3 @@
-# Software Debugging Course Notes
-https://crackinglessons.com/learn/
-CSL Notes
-Started taking notes @ Defeating Software Protection Module
-### Packed Software
-
-Packing = Small Size
-Protecting = Anti Debugging
-
-
-Packing = Prevent Reversing
-
-Unpacking = Let it uncompress into memory -> extract exe into new exe
-
-Loaders/ Runtime Patching = Patch the process in memory instead of patching the file.
-
-unpacker code = stub
-
-
-Look for PUSHAD or PUSH EBP
--> put a hardware breakpoint on the EBP address in the stack
--> f9 to continue and break after POPAD or ON POP EBP
--> trace with f7 and when you encounter a JMP
--> JMP will jump to OEP of original program
--> at OEP use scylla plugin to dump the whole program
--> fix the IAT
-
-IAT is a TABLE listing the MEMORY ADDRESS of the DLLs which the program NEEDS in order to RUN
-
-
-
-### Execution of Packed EXE Program
-
-Starts from new OEP (EntryPoint)
-
-Saves the REGISTER STATUS using PUSHAD or PUSH EBP instruction
-
-all the PACKED SECTIONS are UNPACKED in memory
-
-RESOLVE the import address table IAT of the ORIGINAL EXE
-
-RESTORE the original REGISTER STATUS using POPAD or POP EBP instruction
-
-JUMP to OEP to begin execution
-
-#unpacking 101
-Basically
-
-Find the unpacked exe in memory with scylla
-
-dump it
-
-#Fixing the IAT table
-
-use syclla to IAT autosearch -> click no
-get imports
-fix dump -> dump.exe
-
-
-### Loaders
-
-Create a loader with dup2
-
-Patch the file -> file -> patch file -> EXPORT
-
-### Anti-AntiDebug
-
-command "bp IsDebuggerPresent"
-
-Detect it easy will show you what proctections the program has
-
-
-### Packing & Anti-Debug Combo
-
-CompareStringW 
-If the strings are the same it sets EAX to 2
-
-Either way it always subtracts 2 
--> test if eax now equals zero
-
-
-### Keygens
-
-self keygen -> wherever it moves the string "wrong serial key" into edx for example
-			-> in assembly, replace that instruction to move the serial key into edx
-
-
-### Assembly
-
-Flat Assembler (FASM)
-
-hello db 'hello world',0dh,0ah,0
-odh = carriage return
-0ah = line feed
-carriage return + line feed = new line
-0 = null terminator
-
-add esp, 4  ; clean the stack
-
-
 # Malware Analysis Course Notes
 https://www.udemy.com/course/malware-analysis-fundamentals
 
@@ -199,7 +99,7 @@ In the imports section, we find plenty of Registry imports for this malware to c
 
 ![image](https://user-images.githubusercontent.com/84855585/131648692-03b54208-a0e2-45a7-b4e4-e7d2408e4415.png)
 
-Also in the imports we find 
+Also in the imports we find CreateToolhelp32Snapshot, Process32First & Process32Next. Malware can use these APIs to enumerate through the process list looking for tools such as wireshark, x64dbg, procmon etc, to help prevent analysis.
 
 
 
