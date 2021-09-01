@@ -150,5 +150,31 @@ Tracking handles -> identify sequence of APIs
 
 # Static and Dynamic Analysis
 
+Malware analysis process
+obtain malware -> static/dynamic analysis -> reporting
+
+Static Analysis -> analysis without execution
+(hashing, embedded strings, PE header)
+
+Dynamic analysis -> analysis with execution
+(monitoring changes, behavior monitoring)
+
+Snapshot clean system -> Execute Malware -> Take Snapshot
+Compare two snapshots
+
+## Dynamic Analysis tools
+Regshot - registry snapshot
+Autoruns - check for persistance
+Fakenet - capture network traffic to other servers
+Wireshark - 
+Procmon
+Procdot
+
+
+# Static Analysis of Malware-Sample-1
+
+Malware1(budget-report.exe) -> put into TridNET
+	-> file is an exe
+	![image](https://user-images.githubusercontent.com/84855585/131647059-d6041f21-fa6f-4153-9b58-9cba293b2035.png)
 
 
