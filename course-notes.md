@@ -1,4 +1,5 @@
 # Software Debugging Course Notes
+https://crackinglessons.com/learn/
 CSL Notes
 Started taking notes @ Defeating Software Protection Module
 ### Packed Software
@@ -98,6 +99,7 @@ add esp, 4  ; clean the stack
 
 
 # Malware Analysis Course Notes
+https://www.udemy.com/course/malware-analysis-fundamentals
 
 ## Win32 Api
 
