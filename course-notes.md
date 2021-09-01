@@ -173,8 +173,26 @@ Procdot
 
 # Static Analysis of Malware-Sample-1
 
-Malware1(budget-report.exe) -> put into TridNET
-	-> file is an exe
-	![image](https://user-images.githubusercontent.com/84855585/131647059-d6041f21-fa6f-4153-9b58-9cba293b2035.png)
+## Malware1(budget-report.exe) -> put into TridNET
+
+TridNET shows us very likely -> file is an exe
+![image](https://user-images.githubusercontent.com/84855585/131647059-d6041f21-fa6f-4153-9b58-9cba293b2035.png)
+	
+## Drag Malware1 into PEstudio
+
+This file has many indicators that it is a malicious file, the file is scored by virustotal, the file exposes TSL callbacks, the file imports symbol(s), the amount of imports is suspicious.
+
+![image](https://user-images.githubusercontent.com/84855585/131647409-bf431b8f-45d2-45b7-9a2b-3d0a5ebb6b89.png)
+
+### Strings
+
+PEStudio shows us in the blacklisted strings, that we can see RegDeleteValue, RegSetValueEx, these are to give the malware persistence.
+
+![image](https://user-images.githubusercontent.com/84855585/131647971-9beb7ba2-a5b7-459e-b707-cef60009025d.png)
+
+
+
+
+
 
 
