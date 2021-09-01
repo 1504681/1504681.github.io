@@ -122,7 +122,24 @@ APIs for virtual memory
   - WriteProcessMemory
   - NtMapViewOfSection
   
-  
+ ## Behaviour Identification with APIs
+ 
+ Just because these APIs are in use =/= software is malicious.
+ 	- Context Matters
+	- What are the parameters?
+	- Sets of APIs used in sequence
+	
+Example 1) Process Hollowing
+	CreateProcessA API to make new process in suspended mode
+	sets dwCreationFlag parameter to CREATE_SUSPENDED
+	This is a red flag because normal programs do not do this
+Example 2) WriteProcessMemory
+	Writes into memory of another process
+	Debuggers use this so by itself - not malicious
+	If also using VirtualAllocEx & CreateRemoteThread -> likely malware
+	
+	This is suspicious because of the Sequence the APIs are in
+	
 
 
 
