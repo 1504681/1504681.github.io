@@ -140,7 +140,13 @@ Example 2) WriteProcessMemory
 	
 	This is suspicious because of the Sequence the APIs are in
 	
+### Using Handle to Identify Sequences
 
+Handle is a reference to files, registry, memory, and processes
+Processes use handles to do operations on the referred object
+Tracking handles -> identify sequence of APIs
+
+# Static and Dynamic Analysis
 
 
 
