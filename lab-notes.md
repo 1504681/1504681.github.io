@@ -1,1 +1,129 @@
-As I have just started this course (Aug 27th 2021), this page currently has no notes yet.
+# Software Debugging Course Notes
+CSL Notes
+Started taking notes @ Defeating Software Protection Module
+### Packed Software
+
+Packing = Small Size
+Protecting = Anti Debugging
+
+
+Packing = Prevent Reversing
+
+Unpacking = Let it uncompress into memory -> extract exe into new exe
+
+Loaders/ Runtime Patching = Patch the process in memory instead of patching the file.
+
+unpacker code = stub
+
+
+Look for PUSHAD or PUSH EBP
+-> put a hardware breakpoint on the EBP address in the stack
+-> f9 to continue and break after POPAD or ON POP EBP
+-> trace with f7 and when you encounter a JMP
+-> JMP will jump to OEP of original program
+-> at OEP use scylla plugin to dump the whole program
+-> fix the IAT
+
+IAT is a TABLE listing the MEMORY ADDRESS of the DLLs which the program NEEDS in order to RUN
+
+
+
+### Execution of Packed EXE Program
+
+Starts from new OEP (EntryPoint)
+
+Saves the REGISTER STATUS using PUSHAD or PUSH EBP instruction
+
+all the PACKED SECTIONS are UNPACKED in memory
+
+RESOLVE the import address table IAT of the ORIGINAL EXE
+
+RESTORE the original REGISTER STATUS using POPAD or POP EBP instruction
+
+JUMP to OEP to begin execution
+
+#unpacking 101
+Basically
+
+Find the unpacked exe in memory with scylla
+
+dump it
+
+#Fixing the IAT table
+
+use syclla to IAT autosearch -> click no
+get imports
+fix dump -> dump.exe
+
+
+### Loaders
+
+Create a loader with dup2
+
+Patch the file -> file -> patch file -> EXPORT
+
+### Anti-AntiDebug
+
+command "bp IsDebuggerPresent"
+
+Detect it easy will show you what proctections the program has
+
+
+### Packing & Anti-Debug Combo
+
+CompareStringW 
+If the strings are the same it sets EAX to 2
+
+Either way it always subtracts 2 
+-> test if eax now equals zero
+
+
+### Keygens
+
+self keygen -> wherever it moves the string "wrong serial key" into edx for example
+			-> in assembly, replace that instruction to move the serial key into edx
+
+
+### Assembly
+
+Flat Assembler (FASM)
+
+hello db 'hello world',0dh,0ah,0
+odh = carriage return
+0ah = line feed
+carriage return + line feed = new line
+0 = null terminator
+
+add esp, 4  ; clean the stack
+
+
+# Malware Analysis Course Notes
+
+## Win32 Api
+
+NT APIs in ntdll.dll are not officially documented -> find them at http://undocumented.ntinternals.net
+
+NtCreateSection is an undocumented API usually used by malware for *Process Hollowing*
+
+Process Hollowing
+  - Legitimate process is loaded on the system to act as a *container* for malicious code.
+  - Legit code is deallocated and replaced
+  - Helps process hide amongst normal processes
+
+APIs that perform Registry Operations
+  - RegCreateKey
+  - RegDeleteKey
+  - RegSetValue
+
+APIs for virtual memory
+  - VirtualAlloc
+  - VirtualProtect
+  - NtCreateSection
+  - WriteProcessMemory
+  - NtMapViewOfSection
+  
+  
+
+
+
+
