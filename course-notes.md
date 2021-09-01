@@ -75,7 +75,9 @@ Procdot
 
 ## Malware1(budget-report.exe) -> put into TridNET
 
+
 TridNET shows us very likely -> file is an exe
+
 ![image](https://user-images.githubusercontent.com/84855585/131647059-d6041f21-fa6f-4153-9b58-9cba293b2035.png)
 	
 ## Drag Malware1 into PEstudio
@@ -120,6 +122,50 @@ As we can see here, the file is clearly malicious.
 
 
 # Dynamic Analysis Workflow
+
+## Sequence
+
+1) Start Procmon -> pause -> clear
+2) Start Fakenet
+3) Start Regshot, take 1st snapshot
+4) Once the first snapshot is completed -> resume procmon
+5) Run the malware for 1-3 mins and study the Fakenet output
+6) After 3 minutes of malware runtime, pause procmon
+7) Use Regshot to take the 2nd snapshot
+8) Regshot -> Compare -> Compare and show output
+9) Study Regshot output
+
+Procmon filters
+ProcessName = malware-name
+Operation is {
+	WriteFile
+	SetDispositionInformationFile
+	RegSetValue
+	ProcessCreate
+	TCP
+	UDP
+}
+add these values one at a time to the process monitor
+
+
+## Registry Persistence
+
+There are common places that malware will install persistance in the registry.
+Some of the common places are:
+
+\Software\Microsoft\Windows\CurrentVersion\Run
+\Software\Microsoft\Windows\CurrentVersion\RunOnce
+\Software\Microsoft\Windows\CurrentVersion\RunServices
+\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce
+\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\Run
+\Software\Microsoft\Windows NT\CurrentVersion\Windows\AppInit_DLLs
+
+## DLL Search Order
+
+Directory of Program -> \windows\system32 -> \windows\system -> \windows -> Current Directory -> %PATH% 
+
+Malware might put a dll in the Directory so that it uses that version instead of a DLL found in windows systemfiles. (Because it is earlier in the search order, once the DLL is found, the search is over.)
+
 
 
 
