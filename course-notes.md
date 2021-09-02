@@ -166,7 +166,40 @@ Directory of Program -> \windows\system32 -> \windows\system -> \windows -> Curr
 
 Malware might put a dll in the Directory so that it uses that version instead of a DLL found in windows systemfiles. (Because it is earlier in the search order, once the DLL is found, the search is over.)
 
+# Dynamic Analysis of Malware-Sample-1
 
+- Turn on procmon -> pause -> clear
+- Start fakenet
+- Start Regshot -> take first shot (this will take a few minutes)
+- After 1st shot is completed, turn Capture on in Procmon settings
+- Start the malware
+
+We first notice in Fakenet that the malware is trying to connect to a webserver at mbaquyahcn.biz:80
+
+![image](https://user-images.githubusercontent.com/84855585/131794482-211c54ff-8e53-4fbb-97df-13dae04a4c9a.png)
+
+trying to post data 
+
+![image](https://user-images.githubusercontent.com/84855585/131794718-07ffeef4-2cc6-4e3e-89c3-6827e01bc72e.png)
+
+- Next we take the 2nd snapshot in Regshot -> Compare 
+
+Now Regshot opens a text file with all the changed Registy values
+
+![image](https://user-images.githubusercontent.com/84855585/131795043-2c12b1f9-672d-47b2-8732-407a9b6a052b.png)
+
+
+Here we can see the persistence, it adds a RunOnce value for the exe "\Appdata\Roaming\12648430\spollsv.exe"
+
+![image](https://user-images.githubusercontent.com/84855585/131795305-185a3edc-81fd-45dc-a4de-46f6bf1687e7.png)
+
+And here under Files added, we can see the new exe has been added as well.
+
+![image](https://user-images.githubusercontent.com/84855585/131795517-4801af41-4ec1-4a48-b35a-28b3b27595ba.png)
+
+Under files deleted, we can see that during execution, the malware deleted itself.
+
+![image](https://user-images.githubusercontent.com/84855585/131795571-70f3397b-6a4f-4ca9-a048-946bf98bb3ee.png)
 
 
 
