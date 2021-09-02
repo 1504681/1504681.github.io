@@ -201,9 +201,45 @@ Under files deleted, we can see that during execution, the malware deleted itsel
 
 ![image](https://user-images.githubusercontent.com/84855585/131795571-70f3397b-6a4f-4ca9-a048-946bf98bb3ee.png)
 
+Back under procmon, we have way too many results currently loaded. We can filter the results for the following:
+	Process Name is = [exe name]
+	Operation is = WriteFile
+	Operation is = SetDispositionInformationFile
+	Operation is = RegSetValue
+	Operation is = Process Create
+	Operation is = TCP
+	Operation is = UDP
+	
+![image](https://user-images.githubusercontent.com/84855585/131803591-32d6568d-3123-4d4f-be40-a18c1d5661ac.png)
+
+This is great, now we're only showing these specific results, and we're down to 542 events out of the 667,750 events that happened during the time procmon was active.
+
+![image](https://user-images.githubusercontent.com/84855585/131803731-2d84493f-e213-46a2-8f1d-1990b8f677a9.png)
+
+Now we're going to save ALL EVENTS as a logfile.mml
+
+![image](https://user-images.githubusercontent.com/84855585/131804006-0fc2695e-d662-4b13-81f2-5b07280677e3.png)
 
 
+After that, we're going to save only the current filter results as a .CSV format file (for analysis in Procdot)
 
+![image](https://user-images.githubusercontent.com/84855585/131804094-a648e5c7-2493-40f6-8bba-44cab185e42d.png)
+
+We're going to launch ProcDOT, and import the .CSV file we just generated. This will give us a graph visualization of the results.
+
+![image](https://user-images.githubusercontent.com/84855585/131804669-4af29c00-39dd-41cd-ac6f-d1ea93d2b938.png)
+
+![image](https://user-images.githubusercontent.com/84855585/131804683-41c90291-85ca-49fc-b77a-193bbda8db4a.png)
+
+![image](https://user-images.githubusercontent.com/84855585/131804881-d02433bb-fdfb-4a7f-9bb1-73f0f7525e79.png)
+
+We can see some persistence keys
+
+![image](https://user-images.githubusercontent.com/84855585/131804968-7b126a9b-d979-4da2-a4d2-a4848f450333.png)
+
+![image](https://user-images.githubusercontent.com/84855585/131804985-a46aa3e8-503d-4de4-ad74-1b139a80b4da.png)
+
+These components are known as *Artifacts*.
 
 
 
