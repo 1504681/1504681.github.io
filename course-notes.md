@@ -241,6 +241,22 @@ We can see some persistence keys
 
 These components are known as *Artifacts*.
 
+# Network Analysis of Malware-Sample-1
+
+![image](https://user-images.githubusercontent.com/84855585/132088773-ebb830e9-b699-46c8-8897-249a95113029.png)
+
+Fakenet has already given us enough info to know that the malware is trying to make a HTTP POST request to a webserver at mbaquyahcn.biz:80 
+
+![image](https://user-images.githubusercontent.com/84855585/132088837-4982291a-d4db-483e-8d93-011567d1fc39.png)
+
+
+With 938 bytes of information.
+
+![image](https://user-images.githubusercontent.com/84855585/132088840-b0640d35-d99a-4d14-b294-b364fd7bd9e3.png)
+
+Next step we take the .pcap file thats in our Fakenet logs folder, for analysis in Wireshark.
+
+![image](https://user-images.githubusercontent.com/84855585/132088860-3b285f42-c593-4ba0-87d9-426bfc79f6fa.png)
 
 
 
