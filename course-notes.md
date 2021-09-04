@@ -258,5 +258,71 @@ Next step we take the .pcap file thats in our Fakenet logs folder, for analysis 
 
 ![image](https://user-images.githubusercontent.com/84855585/132088860-3b285f42-c593-4ba0-87d9-426bfc79f6fa.png)
 
+![image](https://user-images.githubusercontent.com/84855585/132089096-aa55eb26-91f5-4e30-9142-9dbe87d2e169.png)
+
+
+Now we're going to filter for HTTP
+
+![image](https://user-images.githubusercontent.com/84855585/132089105-e4db93e8-123d-429b-ab87-2101d3009ead.png)
+
+Now we can follow the TCP stream for the POST request
+
+![image](https://user-images.githubusercontent.com/84855585/132089140-d29e16f7-9145-47ad-960d-8dd82ef6f98d.png)
+
+Here we can see the request we saw earlier, with the encrypted data. Also we can see Fakenet's response in blue at the bottom.
+
+![image](https://user-images.githubusercontent.com/84855585/132089171-c8167d74-2a37-4a23-814c-9a7033610a01.png)
+
+Now that we're finished -> restore to previous VM snapshot.
+
+# Lab Exercise, Analysis of Malware-Sample-2 (financials-xls.exe)
+
+For this Lab Exercise, we recieved the file "financials-xls.exe"
+
+![image](https://user-images.githubusercontent.com/84855585/132089487-6bc00e44-bc4e-432d-8b1a-8de6fac99648.png)
+
+When we take the program into DetectItEasy, it detects that the file is Packed with UPX. So we will use the command "upx -d -o 
+financials-xls-unpacked.exe financials-xls.exe"
+
+![image](https://user-images.githubusercontent.com/84855585/132089563-5ef8d450-e510-499d-ba59-5f2f86cb1fe5.png)
+
+![image](https://user-images.githubusercontent.com/84855585/132089579-52a96acf-514b-4142-9dab-d56e3854ef5f.png)
+
+![image](https://user-images.githubusercontent.com/84855585/132089613-3ed098f4-8154-4806-8ed0-f50338f39b6c.png)
+
+The malware is now unpacked, and we can use this unpacked exe for analysis.
+
+# Static Analysis of Malware-sample-2
+
+Now that we have the unpacked exe, we put it into TridNet.
+
+![image](https://user-images.githubusercontent.com/84855585/132089685-2b28b387-f518-4a8d-82f2-31ed668d6954.png)
+
+TridNet confirms the file is an .exe file.
+
+Next we take the file into PEStudio
+
+![image](https://user-images.githubusercontent.com/84855585/132089714-26d1f3b2-5a69-4f38-9fef-502517a9e3a3.png)
+
+The first thing we're going to check is that we see there are 7 level 1 indicators.
+	1. File is scored by Virustotal
+	2. File uses Russian language.
+	3. The amount of imports (0) is suspicious.
+	4. The first .text section is writable.
+	5. The file contains self-modifying executable sections.
+	6. The file contains writable and executable sections.
+	7. The file references a URL pattern. (69.50.175.181)
+	
+Using wsock32.dll for websockets/connections.
+
+![image](https://user-images.githubusercontent.com/84855585/132089781-3b3c89b9-ee4b-4afd-8823-602ee7e2d71d.png)
+
+Dialog language in Russian.
+
+![image](https://user-images.githubusercontent.com/84855585/132089787-e2ee9af3-2c25-4074-ac2a-69c538c2cd97.png)
+
+
+
+
 
 
