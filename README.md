@@ -3,9 +3,9 @@
 
 Thanks for checking out my blog!
 
-- 🔭 I’m currently working on Reverse Engineering
-- 🌱 I’m currently learning Software Debugging, Network Security & Malware Analysis
-- 📫 How to reach me: discord @ 1504681#9259
+- 🔭 I’m currently working on Malware Courses.
+- 🌱 I’m currently learning how to write reports about malware samples.
+- 📫 How to reach me: Email me at endotkp@gmail.com
 
 [Github Profile](https://github.com/1504681)
 
