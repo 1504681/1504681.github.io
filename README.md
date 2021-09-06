@@ -1,11 +1,9 @@
+Hi there 👋
 
-### Hi there 👋
-
-Thanks for checking out my blog!
-
-- 🔭 I’m currently working on Malware Courses.
-- 🌱 I’m currently learning how to write reports about malware samples.
-- 📫 How to reach me: Email me at endotkp@gmail.com
+🔭 I’m currently studying Malware Analysis courses.
+💻 I have good experience Reverse Engineering Software & Malware, and spend a lot of time writing C++ programs to read/write memory in common software.
+🌱 I’m documenting all my progress, course notes, and malware writeups on my github blog: https://1504681.github.io/
+📫 You can reach me at: endotkp@gmail.com
 
 [Github Profile](https://github.com/1504681)
 
