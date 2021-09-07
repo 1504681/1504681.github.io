@@ -321,8 +321,101 @@ Dialog language in Russian.
 
 ![image](https://user-images.githubusercontent.com/84855585/132089787-e2ee9af3-2c25-4074-ac2a-69c538c2cd97.png)
 
+## Bintext Analysis
+
+![image](https://user-images.githubusercontent.com/84855585/132315368-76311650-b7a7-4c35-bb98-3a31d8de9f71.png)
+
+Here we can see the following strings:
+	GetStartupInfoA
+	RegDeleteKeyA
+	RegSetValueExA
+	RegDeleteValueA
+	RegCreateKeyExA
+	RegQueryValueExA
+	RegCloseKey
+	
+![image](https://user-images.githubusercontent.com/84855585/132315634-e3e232fb-2c70-4c31-93e6-4f4f7a04b825.png)
+
+We also see some HTML of a fake error message:
+
+![image](https://user-images.githubusercontent.com/84855585/132315876-e1b51e5e-b2ae-408a-815c-6b9e3ef356ad.png)
+
+We also see a HTTP download request:
+
+![image](https://user-images.githubusercontent.com/84855585/132315986-a948c586-9dca-4497-8e89-63127f784fbf.png)
+
+So we can assume this software will use scare tactics (with the fake error message) to promt the user to download a fake antivirus software (BraveSentry)
+
+Evidenced here: 
+
+![image](https://user-images.githubusercontent.com/84855585/132316227-9248d7ea-b083-4e18-9048-7a62e7ff2cc2.png)
+
+We see a Registry key string "SOFTWARE\Microsoft\Windows\CurrentVersion\Run", followed by "C:\\Windows\xpupdate.exe". This is likely a persistence executable to be run at startup.
+
+![image](https://user-images.githubusercontent.com/84855585/132316649-52a0038b-3ec9-4924-814a-04590a570ebe.png)
+
+## Searching for encrpted string with xorsearch
+
+In CMD, we're going to run the xorsearch command followed by the unpacked malware file as the first parameter, the second parameter will be the string we're going to be searching for, "http".
+
+![image](https://user-images.githubusercontent.com/84855585/132317170-2f35aa31-838d-4448-a11d-d8e59694b254.png)
+
+Now after this, we get 5 results.
+
+![image](https://user-images.githubusercontent.com/84855585/132317296-8bab029b-4b6a-4905-ac43-91730d3caf88.png)
+
+With XOR 00, this means there was NO encryption, so we can ignore this result.
+With XOR 20, these conversions were lowercase/uppercase conversions.
+
+Therefor, we did not get any encrypted results through this search, so we can try with a different string, "This".
+
+We search for "This" because we know that at the start of PE files, there is always the string "This program cannot be run in DOS mode", therefor if we find this string with or without encryption, we can make assumptions about the encrpytion of the rest of the file.
+
+Now for the results:
+
+![image](https://user-images.githubusercontent.com/84855585/132317729-624abd4a-0262-4842-9b58-ac22ec7029f4.png)
+
+With another XOR 00 result, we can assume that the file is NOT encrypted.
+
+## HashAnalysis
+
+In PEStudio, we can take the programs MD5 hash, copy it and take it into VirusTotal for the results.
+
+![image](https://user-images.githubusercontent.com/84855585/132318595-5416d510-a53b-4434-8c4e-c7b859f880a1.png)
 
 
+![image](https://user-images.githubusercontent.com/84855585/132318558-5a39248f-e8fe-41ee-920a-4534fc198f87.png)
+
+And VirusTotal already has 40 flags for this unpacked exe file.
+
+![image](https://user-images.githubusercontent.com/84855585/132318685-dafd4161-7dc0-4e77-8bc5-ca00534b32fc.png)
+
+We can conclude from all of these results that this is a malicious executable.
+
+Next, we can process with the Dynamic analysis.
+
+# Dynamic Analysis of Malware-Sample-2
+
+1) Open procmon, stop capturing & clear the results.
+
+![image](https://user-images.githubusercontent.com/84855585/132319046-9e5be957-7a11-4b15-9646-a1331d0402cc.png)
+
+2) Open Fakenet to intercept network traffic
+
+![image](https://user-images.githubusercontent.com/84855585/132319280-54e96e5e-2342-4dac-b945-b49a8e8794c3.png)
+
+
+3) Open Regshot, and make sure we are scanning the entire C:\ Drive, take 1st shot.
+
+![image](https://user-images.githubusercontent.com/84855585/132319690-fb96ec8c-c1d1-4b51-b807-fe66968bfd13.png)
+
+4) In procmon, turn "Capture" back on, and run the malware with elevated privledges. We saw earlier that the malware is writing to the protected "C:\Windows\" folder, so we are sure that it needs administrative privledges to work.
+
+![image](https://user-images.githubusercontent.com/84855585/132326782-a53f52a0-4aa5-4606-be5e-b23cf475a01f.png)
+
+![image](https://user-images.githubusercontent.com/84855585/132326893-68b3f17a-701c-41cb-97f2-d423fa58d298.png)
+
+Popup at the bottom of the screen shows us the text we saw earlier in the Static Analysis
 
 
 
