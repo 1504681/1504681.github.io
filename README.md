@@ -27,9 +27,9 @@ Currently working through the "Reverse Engineering and Malware Analysis Fundamen
 
 ## Malware Reports
 
-[Malware-sample-1](sample1-report) Writeup
+[Malware-sample-1](sample1-report) Writeup of budget-report.exe
 
-[Malware-sample-2](sample2-report) Writeup
+[Malware-sample-2](sample2-report) Writeup of financials-xls.exe
 
 
 
