@@ -1,8 +1,14 @@
 # Malware Writeups
 
+## Malware Analysis
+
 **[Malware-sample-1](sample1-report) Writeup**
 
 **[Malware-sample-2](sample2-report) Writeup**
+
+## Malware Reverse Engineering
+
+**[Malware-sample-3](sample3-report) Writeup**
 
 
 
