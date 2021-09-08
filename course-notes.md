@@ -1,15 +1,13 @@
 # Malware Sample Writeups
 
-[Malware-sample-1 Writeup](sample1-report)
 
-[Malware-sample-2 Writeup](sample2-report)
+[Malware-sample-1](sample1-report) Writeup
 
-
-
-# Malware Analysis Course Notes
-https://www.udemy.com/course/malware-analysis-fundamentals
+[Malware-sample-2](sample2-report) Writeup
 
 
+
+# Malware Analysis General Notes
 
 ## Win32 Api
 

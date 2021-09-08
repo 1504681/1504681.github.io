@@ -202,4 +202,4 @@ Here we can see the request we saw earlier, with the encrypted data. Also we can
 
 Now that we're finished -> restore to previous VM snapshot.
 
-
+Next, we will complete [Malware-sample-2](sample2-report).
