@@ -1,6 +1,8 @@
 # Malware Sample Writeups
-[sample1](sample1-report.md)
-[sample2](sample2-report.md)
+
+[Malware-sample-1 Writeup](sample1-report)
+
+[Malware-sample-2 Writeup](sample2-report)
 
 
 
