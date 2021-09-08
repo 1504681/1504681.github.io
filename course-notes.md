@@ -1,4 +1,4 @@
-# Malware Sample Writeups
+# Malware Writeups
 
 
 [Malware-sample-1](sample1-report) Writeup
@@ -79,3 +79,4 @@ Procmon
 Procdot
 
 
+Next we'll be doing a report on [Malware-sample-1](sample1-report).
