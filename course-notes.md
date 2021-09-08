@@ -413,9 +413,83 @@ Next, we can process with the Dynamic analysis.
 
 ![image](https://user-images.githubusercontent.com/84855585/132326782-a53f52a0-4aa5-4606-be5e-b23cf475a01f.png)
 
-![image](https://user-images.githubusercontent.com/84855585/132326893-68b3f17a-701c-41cb-97f2-d423fa58d298.png)
 
-Popup at the bottom of the screen shows us the text we saw earlier in the Static Analysis
+We can see through Fakenet that the malware requested a TCP download, likely to download more malware packages:
+
+![image](2021-09-08-10-06-35.png)
+
+Now we'll take our 2nd shot and compare the two Regshots
+
+Here we see 9 new registry values added:
+
+![image](2021-09-08-10-11-36.png)
+
+We can see the malware has installed persistence in the \SOFTWARE\Microsoft\Windows\CurrentVersion\Run\ folder, with "Windows update loader: "C:\Windows\xpupdate.exe"
+
+
+![image](2021-09-08-10-13-25.png)
+
+We will add this file to our notes to check again later
+
+![image](2021-09-08-10-18-06.png)
+
+another persistence key would be the following key: "SOFTWARE\Microsoft\Windows\CurrentVersion\Run\con: "C:\Users\ThomasK\Desktop\malware-sample\financials-xls-unpacked.exe" which will execute this malware program again on startup.
+
+Under files added, we see 5 files have been created:
+
+![image](2021-09-08-10-16-27.png)
+
+We take note of "C:\Users\ThomasK\AppData\Roaming\Install.dat"
+as well.
+
+
+## Procmon Filters & Export
+
+As explained before, we're going to filter for results pertaining to this malware executable.
+
+![image](2021-09-08-10-21-06.png)
+
+Add the rest of our filters:
+
+![image](2021-09-08-10-22-41.png)
+
+Results:
+
+![image](2021-09-08-10-23-18.png)
+
+We can see the two new files, xpupdate.exe and Install.dat, and we see the 3 new RegSetValue's.
+
+Again we will export as PML & CSV formats.
+
+We'll save both of these files to the malware the folder is in.
+
+![image](2021-09-08-10-25-40.png)
+
+### Procdot Analysis
+
+After adding the CSV file from Procmon into ProcDOT, we get this graph:
+
+![image](2021-09-08-10-36-14.png)
+
+We can see:
+	The TCP connection with the webserver 69.50.175.181
+
+	Thread 8180 created file C:\Windows\xpupdate.xe
+	Thread 8180 created registry key "Windows update loader" which is an Autostart Registry key
+
+	Thread 8180 created thread 4260
+		Thread 4260 created the Install.dat file.
+		Thread 4260 created 2 more registry keys, one of them being the \Run\con autostart key.
+		Thread 4260 also killed the original malware process
+
+### Compare Hashes with PEStudio
+
+If we compare the hashes of the file this malware created, with the original malware itself, we actually can see that they are the exact same file.
+
+![image](2021-09-08-10-44-00.png)
+
+
+# Network Analysis of Malware-sample-2
 
 
 
