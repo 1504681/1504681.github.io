@@ -14,7 +14,7 @@ Hi there 👋
 
 Currently studying malware analysis @ [udemy](https://www.udemy.com/course/malware-analysis-fundamentals/)
 
-**[My course notes can be found here!](course-notes)**
+**[My course notes can be found here!](http://1504681.github.io/course-notes)**
 
 ## Completed Courses
 
@@ -23,15 +23,15 @@ Currently studying malware analysis @ [udemy](https://www.udemy.com/course/malwa
   
 ## Malware Analysis
 
-Currently working through the "Reverse Engineering and Malware Analysis Fundamentals" course @ [this link](https://www.udemy.com/course/malware-analysis-fundamentals/), and my course notes can be found [here](course-notes)
+Currently working through the "Reverse Engineering and Malware Analysis Fundamentals" course @ [this link](https://www.udemy.com/course/malware-analysis-fundamentals/), and my course notes can be found [here](http://1504681.github.io/course-notes)
 
 ## Malware Reports
 
-**[Malware-sample-1](sample1-report) Writeup of budget-report.exe**
+**[Malware-sample-1](http://1504681.github.io/sample1-report) Writeup of budget-report.exe**
 
-**[Malware-sample-2](sample2-report) Writeup of financials-xls.exe**
+**[Malware-sample-2](http://1504681.github.io/sample2-report) Writeup of financials-xls.exe**
 
-**[Malware-sample-3](sample3-report) Analysis & Reversing Sample.bin** (50% complete)
+**[Malware-sample-3](http://1504681.github.io/sample3-report) Analysis & Reversing Sample.bin** (50% complete)
 
 
 
