@@ -31,8 +31,12 @@ Currently working through the "Reverse Engineering and Malware Analysis Fundamen
 
 **[Malware-sample-2](sample2-report) Writeup of financials-xls.exe**
 
+**[Malware-sample-3](sample3-report) Analysis &Reversing Sample.bin**
+
 
 
 ## Contact
 
 I can be reached at endotkp@gmail.com
+
+
