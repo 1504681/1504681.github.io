@@ -12,18 +12,9 @@ Hi there 👋
 
 ## Current Projects
 
-Currently studying malware analysis @ [udemy](https://www.udemy.com/course/malware-analysis-fundamentals/)
+Currently working through the "Reverse Engineering and Malware Analysis Fundamentals" course @ [udemy](https://www.udemy.com/course/malware-analysis-fundamentals/)
 
 **[My course notes can be found here!](http://1504681.github.io/course-notes)**
-
-## Completed Courses
-
-[Completed](https://udemy-certificate.s3.amazonaws.com/image/UC-199e8749-40a0-4de3-b724-969523e9bff1.jpg?v=1627804605000) Paul Chin's Reverse Engineering: IDA For Beginners Course @ [this link](https://www.udemy.com/course/reverse-engineering-ida/)
-  This was the course that I used to start my journey into reverse engineering.
-  
-## Malware Analysis
-
-Currently working through the "Reverse Engineering and Malware Analysis Fundamentals" course @ [this link](https://www.udemy.com/course/malware-analysis-fundamentals/), and my course notes can be found [here](http://1504681.github.io/course-notes)
 
 ## Malware Reports
 
@@ -33,7 +24,10 @@ Currently working through the "Reverse Engineering and Malware Analysis Fundamen
 
 **[Malware-sample-3](http://1504681.github.io/sample3-report) Analysis & Reversing Sample.bin** (50% complete)
 
+## Completed Courses
 
+[Completed](https://udemy-certificate.s3.amazonaws.com/image/UC-199e8749-40a0-4de3-b724-969523e9bff1.jpg?v=1627804605000) Paul Chin's Reverse Engineering: IDA For Beginners Course @ [this link](https://www.udemy.com/course/reverse-engineering-ida/)
+  This was the course that I used to start my journey into reverse engineering.
 
 ## Contact
 
