@@ -2,7 +2,7 @@ Hi there 👋
 
 🔭 I’m currently studying Malware Analysis courses.
 
-💻 I have good experience Reverse Engineering Software & Malware, and spend a lot of time writing C++ programs to read/write memory in common software.
+💻 I have experience Reverse Engineering Software & Malware, and spend a lot of time writing C++ programs to read/write memory in common software.
 
 🌱 I’m documenting all my progress, course notes, and malware writeups here on this blog!
 
